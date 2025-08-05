@@ -7,15 +7,14 @@ pkgs.stdenv.mkDerivation {
   src = ./.;
   
   buildInputs = with pkgs; [ 
-    gcc
+    clang
     gnumake
     cmake
   ];
   
   buildPhase = ''
-    mkdir build
     cmake ..
-    make
+    make VERBOSE=1
   '';
   
   installPhase = ''

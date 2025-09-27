@@ -1,6 +1,6 @@
 {
     pkgs ? import <nixpkgs> {},
-    diskbuilder ? import ./default.nix { pkgs=pkgs; },
+    diskbuilder ? import ./default.nix { inherit pkgs; },
 }
 :
 pkgs.mkShell {
